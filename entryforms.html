@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <title>Submit an entry!</title>
+        <meta charset="UTF-8">
+    </head>
+
+    <body>
+    
+    <nav>
+        <h2>The Mapuan Wall</h2>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="entries.html">Entries</a>></li>
+            <li><a href="forms.html">Forms</a></li>
+        </ul>
+    </nav>
+
+    <header id ="header">
+        <h1 id="title1">Entries Submission</h1>
+    </header>
+
+    <main>
+        <h3 id="title2">Welcome to the Mapuan Wall!</h3>
+
+        <form action="/submit-form" method="POST" enctype="multipart/form-data">
+            <div class="username">
+                <label for="username">Username (Optional): </label>
+                <input type="text" id="username" name="username" placeholder="Insert an alias (Leave blank for anonymous)">
+            </div>
+            <div class="entry">
+                <label for="entries">Entry:</label>
+                <input type="textarea" id="message" name="entries" placeholder="What's on your mind?" required>
+            </div>
+            <div class="file_attachment">
+                <label for="entries">Attach an image:</label>
+                <input type="file" id="attachment" name="attachment">
+            </div>
+            <div class="campus">
+                <label for="campus">Campus: </label>
+                <select id="campus" name="campus">
+                    <option value="Intramuros">Intramuros</option>
+                    <option value="Makati">Makati</option>
+                </select>
+            </div>
+            <div>
+                <label for="department">
+                    <select id="department" name="department">
+                        <option value="ARIDBE">School of Architecture, Industrial Design, and the Built Environment</option>
+                        <option value="CBMES">School of Chemical, Biological, and Materials Engineering and Sciences</option>
+                        <option value="CEGE">School of Civil, Environmental, and Geological Engineering</option>
+                        <option value="EECE">School of Electrical, Electronics, and Computer Engineering</option>
+                        <option value="IEEM">School of Industrial Engineering and Engineering Management</option>
+                        <option value="SOIT">School of Information Technology</option>
+                        <option value="MMEE">School of Mechanical, Manufacturing, and Energy Engineering</option>
+                        <option value="SMDA">School of Multimedia and Digital Arts</option>
+                        <option value="ETYSB">E.T. Yuchengco School of Business</option>
+                        <option value="SHEALTHSCI">School of Health Sciences</option>
+                        <option value="SMDA">School of Multimedia and Digital Arts</option>
+                        <option value="SOM">School of Medicine</option>
+                        <option value="STHM">School of Tourism and Hospitality Management</option>
+                        <option value="SFSE">School of Foundational Studies and Education</option>
+                        <option value="SHS">Senior High School</option>
+                    </select>
+                </label>
+            </div>
+            <div class="year">
+                <label for="year">Year: </label>
+                <input type="number" min="1" max="10" id="year" name="year">
+            </div>
+            <button type="submit">Submit Entry</button>
+        </form>
+    </main>
+
+    </body>
+
+</html>
+
