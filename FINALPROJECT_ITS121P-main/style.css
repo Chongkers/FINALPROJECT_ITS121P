@@ -8,7 +8,24 @@
 
 /*main,body,header,footer css*/
 
+main {
+    padding-top: 140px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex: 1; 
+}
+
 body {
+    margin: 0;
+    padding: 0;
+    min-height: 900px; 
+
+    flex-direction: column;
+    
     background: linear-gradient(rgba(15, 15, 15, 0.9), rgba(15, 15, 15, 0.9)), url("mapuahome.jpg");
     background-size: cover;
     background-attachment: fixed;
@@ -58,8 +75,20 @@ main {
 footer {
     background-color: #151515;
     padding: 40px 0;
-    margin-top: 80px; 
-    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    margin-top: auto; 
+    margin-bottom: -50px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.homefooter{
+    max-width: 1200px;
+    margin: -85px auto 0 auto; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    width: 100%;
 }
 
 .footerContainer {
@@ -69,7 +98,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 0 40px;
-    margin-right:200px;
+    margin-right:auto;
     min-height: 0px;
     max-height: 20px;
     margin-bottom: 15px;
@@ -121,12 +150,24 @@ footer {
     transform: scale(1.2); 
 }
 
+main, .container {
+    flex: 1; 
+    padding-top: 140px;
+    padding-bottom: 50px; 
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+
 
 /*home css*/
 
 
+
 .home .form {
-    flex: 1;
+    flex: 1.5;
+    padding-right: 50px;
 }
 
 .mapuawall {
@@ -196,9 +237,9 @@ h1 {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(2, 220px);
-    grid-template-rows: repeat(2, 220px);
-    gap: 20px;
+    grid-template-columns: repeat(2, 250px); 
+    grid-template-rows: repeat(2, 250px);
+    gap: 30px;
 }
 .grid-item {
     background-color: #ffffff;
@@ -214,8 +255,10 @@ h1 {
     padding-top: 100px;
     padding-left: 115px;
     margin-bottom: -500px;
+    display: flex;
 }
 .form-container {
+
     max-width: 535px;
     min-width: 535px;
     max-height: 720px;
@@ -226,7 +269,7 @@ h1 {
     display: flex;
     gap: 50px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    margin-left: 100px;
+    margin-left: 10%;
     margin-top: 510px;
     margin-bottom: 350px;
 }
