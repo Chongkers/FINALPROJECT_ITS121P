@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -6,26 +5,12 @@
     font-family: Arial, sans-serif;
 }
 
-/*main,body,header,footer css*/
-
-main {
-    padding-top: 140px;
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex: 1; 
-}
-
 body {
     margin: 0;
     padding: 0;
-    min-height: 900px; 
-
+    min-height: 100vh;
+    display: flex;
     flex-direction: column;
-    
     background: linear-gradient(rgba(15, 15, 15, 0.9), rgba(15, 15, 15, 0.9)), url("mapuahome.jpg");
     background-size: cover;
     background-attachment: fixed;
@@ -39,19 +24,92 @@ body::-webkit-scrollbar {
 
 header {
     box-shadow: 0px -3px 20px rgba(0, 0, 0, 0.5);
-    background-color: #309898;
-    padding: 20px 0;
+    background-color: #efdb26e6;
+    padding: 15px 0;
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1000; 
+    z-index: 9999 !important;
 }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Container for the whole header content */
+header .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* This centers the nav links */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative; /* Allows absolute positioning for the logo */
+}
+
+/* Position the logo on the far left without affecting the center */
+.logo-wrapper {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: -150px; 
+    margin-top: -20px;
+}
+
+.logo-wrapper img {
+    height: 50px; /* Adjust as needed */
+    width: auto;
+    display: block;
+    padding-bottom: 10px;
+
+}
+
+.logo a:first-child {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.logo{
+    display: flex;
+    justify-content: center; /* Centers the <nav> links */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;     /* Crucial: allows the logo to pin to this container */
+    padding: 0 20px;
+    height: 80px;
+}
+
+.logo img {
+    height: 80px;           /* Enlarged as requested */
+    width: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05); /* Subtle pop on hover */
+}
+
+/* The Navigation links stay perfectly centered */
 header nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
-    gap: 105px;
+    gap: 60px; /* Adjusted gap for better spacing */
+    margin: 0;
+    padding: 0;
 }
+
 header nav a {
     text-decoration: none;
     color: #ffffff;
@@ -60,30 +118,36 @@ header nav a {
     font-size: 17px;
     transition: color 0.5s ease-in-out;
 }
+
 header nav a:hover {
     color: #FF9F00;
 }
 
-main {
+/* main is the flex row: .home LEFT, .mainFeed RIGHT */
+main, .container {
+    flex: 1;
     padding-top: 100px;
+    padding-bottom: 10px;
     max-width: 1200px;
-    margin: 50px auto;
+    margin: 0 auto;
+    width: 100%;
     display: flex;
+    flex-direction: row;
     align-items: flex-start;
+    gap: 50px;
 }
 
 footer {
     background-color: #151515;
     padding: 40px 0;
     width: 100%;
-    margin-top: auto; 
-    margin-bottom: -50px;
+    margin-top: auto;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.homefooter{
+.homefooter {
     max-width: 1200px;
-    margin: -85px auto 0 auto; 
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -98,32 +162,27 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 0 40px;
-    margin-right:auto;
-    min-height: 0px;
-    max-height: 20px;
     margin-bottom: 15px;
-    margin-top: -10px;
 }
 
 .footerSection h4 {
     color: #FF9F00;
     text-shadow: 0 0 10px #F4631E, 0 0 20px #000000;
-    font-size:30px;
+    font-size: 30px;
     margin-bottom: 10px;
 }
 
 .footerSection h5 {
     color: #ffffff;
     text-shadow: 2px 2px 0.5px #171717;
-    font-size:12px;
-    margin-bottom: 70px;
+    font-size: 12px;
+    margin-bottom: 15px;
 }
 
 .footerSection p {
     font-size: 9px;
     color: #ffffff;
     padding-right: 30px;
-    margin-top: 95px;
     text-shadow: 2px 2px 0.5px #171717b2;
 }
 
@@ -147,27 +206,29 @@ footer {
 
 .footerLinks a:hover i {
     color: #FF9F00;
-    transform: scale(1.2); 
+    transform: scale(1.2);
 }
 
-main, .container {
-    flex: 1; 
-    padding-top: 140px;
-    padding-bottom: 50px; 
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
+/* HOME PAGE */
+
+/* .home = LEFT column: @tag, heading, button stacked vertically */
+.home {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 60px;
 }
-
-
-
-/*home css*/
-
-
 
 .home .form {
-    flex: 1.5;
-    padding-right: 50px;
+    flex: 1;
+}
+
+/* .mainFeed = RIGHT column: latest entries */
+.mainFeed {
+    flex: 1;
+    padding-top: 20px;
 }
 
 .mapuawall {
@@ -178,28 +239,16 @@ main, .container {
 }
 
 h1 {
-    font-size: 73px;
+    font-size: 85px !important;
     line-height: 85px;
-    margin-bottom: 45px;
+    margin-top: 65px;
+    margin-bottom: 55px;
     font-weight: bold;
-    color: #ffffff;
+    color: #ffffff !important;
     text-shadow: 5px 5px 0.3px #171717;
-    
     animation: fadeInUp 1.2s ease-out forwards;
     opacity: 0;
 }
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
 
 .button1 {
     width: 180px;
@@ -210,15 +259,15 @@ h1 {
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     transition: background-color 0.8s;
-
+    color: white;
+    margin-top: 35px;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 16px;
 }
+
 .button1:hover {
     background-color: #CB0404;
 }
-
-
 
 .entries {
     flex: 1;
@@ -227,20 +276,15 @@ h1 {
     align-items: flex-end;
 }
 
-.sectionTitle {    
+.sectionTitle {
     font-size: 18px;
     margin-bottom: 20px;
     font-weight: bold;
     color: #ffffff;
     text-shadow: 2px 2px 0.5px #171717;
+    margin-left: 70px;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(2, 250px); 
-    grid-template-rows: repeat(2, 250px);
-    gap: 30px;
-}
 .grid-item {
     background-color: #ffffff;
     border-radius: 10px;
@@ -248,62 +292,68 @@ h1 {
     border: 1px solid #444;
 }
 
+/* FORM PAGE */
 
-/*form css*/
-
-.forms{
-    padding-top: 100px;
-    padding-left: 115px;
-    margin-bottom: -500px;
+.forms {
+    padding-top: 0px;
+    padding-bottom: 60px;
     display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    flex-wrap: wrap;
 }
-.form-container {
 
-    max-width: 535px;
-    min-width: 535px;
-    max-height: 720px;
-    min-height: 720px;
+.form-container {
+    width: 40%;
     padding: 30px;
     background-color: rgba(20, 20, 20, 0.9);
     border-radius: 20px;
     display: flex;
-    gap: 50px;
+    flex-direction: column;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    margin-left: 10%;
-    margin-top: 510px;
-    margin-bottom: 350px;
+    margin-bottom: 100px;
 }
+
 #title1 {
     color: #ffffff;
     font-size: 20px;
     padding-bottom: 10px;
     text-shadow: 2px 2px 0.5px #171717;
+    font-weight: bold;
+    text-align: center;
 }
-
-
 
 form {
     flex: 2;
     display: flex;
     flex-direction: column;
 }
+
 .form-group {
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
 }
+
 .form-row {
     display: flex;
-    gap: 80px;
+    gap: 20px;
 }
+
 .form-row .form-group {
     flex: 1;
 }
+
 label {
     color: #FF9F00;
     font-weight: bold;
     margin-bottom: 10px;
 }
+
 input, select, textarea {
     background-color: #1a1a1a;
     border: 2px solid #F4631E;
@@ -311,19 +361,17 @@ input, select, textarea {
     padding: 12px;
     color: white;
 }
+
 textarea {
     height: 130px;
     resize: none;
 }
 
-
-
 input[type="file"] {
     display: none;
 }
 
-
-.imageButton{
+.imageButton {
     background-color: #F4631E;
     color: black;
     padding: 4px 8px;
@@ -355,7 +403,6 @@ input[type="file"] {
     font-size: 13px;
 }
 
-
 .submit-btn {
     background-color: #FF9F00;
     color: black;
@@ -368,54 +415,50 @@ input[type="file"] {
     transition: background 0.8s;
     margin-top: 10px;
 }
+
 .submit-btn:hover {
     background-color: #CB0404;
 }
 
 .form-side {
     display: flex;
-    padding-left: 180px;
-    padding-top: 70px;
+    align-items: flex-start;
+    padding-top: 0;
 }
 
 .grid2 {
     display: grid;
     grid-template-columns: repeat(2, 220px);
-    grid-template-rows: repeat(2, 500px);
-    gap: 70px;
+    grid-template-rows: repeat(2, 220px);
+    gap: 20px;
 }
+
 .grid-form {
     background-color: #303030;
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     border: 1px solid #141414;
+    border-radius: 10px;
 }
 
-
-
-/*entries css*/
-
-
+/* ENTRIES PAGE */
 
 .entriesContainer {
     max-width: 1200px;
     margin: 140px auto 50px auto;
     display: flex;
-}
-
-.mainFeed {
-    margin-top: -150px;
-    flex: 2;
+    align-items: flex-start;
+    gap: 450px;
 }
 
 .sidebarLeft {
     flex: 1;
-    margin-right: 170px;
-    padding: 20px;
-    height: fit-content;
+    margin-right: 0;
+    padding: 0;
 }
+
 .sidebarRight {
     flex: 1;
-    background-color: rgba(25, 25, 25, 0.04);
+    background-color: rgba(45, 45, 45, 0.4);
     padding: 20px;
     border-radius: 15px;
     border: 1px solid #FF9F00;
@@ -429,6 +472,11 @@ input[type="file"] {
     margin-bottom: 20px;
     border-bottom: 2px solid #F4631E;
     padding-bottom: 5px;
+}
+
+.mapuawall2, .sidebarTitle {
+    padding-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .postLeft {
@@ -449,7 +497,7 @@ input[type="file"] {
     border-radius: 10px;
 }
 
-.sidebarTitle{
+.sidebarTitle {
     color: #ffffff;
     text-align: center;
     border-bottom: 2px solid #F4631E;
@@ -476,17 +524,32 @@ input[type="file"] {
 
 .voteButton {
     background: none;
-    border: none;
+    border: 1px solid transparent;
     color: #FF9F00;
-    font-size: 30px;
+    font-size: 24px;
     font-weight: bold;
     cursor: pointer;
-    transition: transform 0.7s, color 0.5s;
+    width: 100%;
+    padding: 5px 0;
+    transition: all 0.2s ease;
 }
 
 .voteButton:hover {
+    background-color: rgba(255, 159, 0, 0.1);
+    border-radius: 4px;
     color: #CB0404;
     transform: scale(1.3);
+}
+
+.sidebarVote {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 70px;
+    border-left: 1px solid #555;
+    padding-left: 15px;
+    margin-left: 15px;
 }
 
 .voteCount {
@@ -494,7 +557,97 @@ input[type="file"] {
     color: #ffffff;
     font-size: 18px;
     margin: 5px 0;
-    padding-left: 30px;
-    padding-bottom: 5px;
-    margin-top: -26px;
+    padding: 0 !important;
+    line-height: 1;
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card-text{
+    margin: 15px;
+}
+
+#clearWall {
+    padding: 10px 20px;
+    background-color: #cc0000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#clearWall:hover {
+    background-color: #990000;
+}
+
+.feed-card, .sidebar-card, .home-card {
+    background-color: #3d3d3d !important;
+    border: 1px solid #555 !important;
+    border-radius: 12px !important;
+    color: #ffffff !important;
+    width: 100% !important;
+    margin-bottom: 20px;
+}
+
+.card.home-card{
+    width: 100% !important;
+    margin-left: 50px;
+}
+
+.feed-card{
+    width: 200% !important;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    color: #FF9F00 !important;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-action-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 20px;
+    margin: 30px;
+}
+
+.tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.badge {
+    background-color: #eaf613 !important;
+    color: #000000 !important;
+    padding: 5px 10px !important;
+    font-weight: bold !important;
+    border-radius: 4px !important;
+    font-size: 11px;
+}
+
+.list-group-item {
+    background: #333;
+    color: #aaa;
+    border-top: 1px solid #555;
+    font-size: 12px;
+    padding: 10px 20px;
+}
+
+.card.home-card .sidebarVote, 
+.sidebar-card .sidebarVote {
+    display: none;
 }

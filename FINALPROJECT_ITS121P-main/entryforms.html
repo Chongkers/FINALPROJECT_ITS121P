@@ -2,104 +2,59 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>TMW | Submit an entry!</title>
+    <title>TMW | Forms here!</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
 <body>
-    
+
     <header>
+        <div class="header-container">
         <nav>
+            <div class="logo-wrapper">
+                <a href="index.html" class="logo">
+                    <img src="logo.png" alt="Company Logo">
+                </a>
+            </div>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="forms.html">Entries</a></li>
-                <li><a href="entryforms.html">Forms</a></li>
+                <li><a href="entryforms.html">Entries</a></li>
+                <li><a href="forms.html">Forms</a></li>
             </ul>
         </nav>
-    </header>
-
-        <section class="forms">
-            <p class="mapuawall"></p>
-        </section>
-
-    <main class="form-container">
-        <form action="/submit-form" method="POST">
-
-            <h2 id="title1">Entries Submission</h2>
-
-                <div class="form-group">
-                    <label for="username">Username (Optional):</label>
-                    <input type="text" id="username" name="username" placeholder="Insert an alias (Leave blank for anonymous)">
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Entry:</label>
-                    <textarea id="message" name="entries" placeholder="What's on your mind?" required></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label>Attach an image:</label>
-                    <div class="imageUpload">
-                        <label for="attachment" class="imageButton">Choose File</label>
-                        <input type="file" id="attachment" name="attachment">
-                        <span id="file-chosen">No file chosen</span>
-                    </div>
-                </div>
-
-            <div class="form-group">
-                <label for="department">Department:</label>
-                <select id="department" name="department">
-                    <option value="N/A"></option>
-                    <option value="ARIDBE">School of Architecture, Industrial Design, and the Built Environment</option>
-                    <option value="CBMES">School of Chemical, Biological, and Materials Engineering and Sciences</option>
-                    <option value="CEGE">School of Civil, Environmental, and Geological Engineering</option>
-                    <option value="EECE">School of Electrical, Electronics, and Computer Engineering</option>
-                    <option value="IEEM">School of Industrial Engineering and Engineering Management</option>
-                    <option value="SOIT">School of Information Technology</option>
-                    <option value="MMEE">School of Mechanical, Manufacturing, and Energy Engineering</option>
-                    <option value="SMDA">School of Multimedia and Digital Arts</option>
-                    <option value="ETYSB">E.T. Yuchengco School of Business</option>
-                    <option value="SHEALTHSCI">School of Health Sciences</option>
-                    <option value="SOM">School of Medicine</option>
-                    <option value="STHM">School of Tourism and Hospitality Management</option>
-                    <option value="SFSE">School of Foundational Studies and Education</option>
-                    <option value="SHS">Senior High School</option>
-                </select>
-            </div>
-
-        <div class="form-row">
-            <div class="form-group">
-                <label for="campus">Campus:</label>
-                <select id="campus" name="campus">
-                    <option value="N/A"></option>
-                    <option value="Intramuros">Intramuros</option>
-                    <option value="Makati">Makati</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="year">Year:</label>
-                <input type="number" min="1" max="10" id="year" name="year">
-            </div>
         </div>
 
-                <button type="submit" class="submit-btn">Submit Entry</button>
-    </form>
-            
-        <section class="form-side">
-            <div class="grid2">
-                <div class="grid-form"></div>
-                <div class="grid-form"></div>
+    </header>
+<div style="padding-top: 80px;">
+
+<div class="entriesContainer" style="margin-top: 0;">
+        
+        <main class="mainFeed">
+            <div class="sidebarLeft">
+            <h3 class="mapuawall2">@The Mapuan Wall</h3>
+
+            <div class="grid"></div>
             </div>
-        </section>
-    </main>      
-    
-        <footer>
+
+        </main>
+
+        <aside class="sidebarRight">
+            <h3 class="sidebarTitle">Top Posts</h3>
+            <div class="grid"></div>
+        </aside>
+    </div>
+</div>
+
+    <footer>
         <div class="footerContainer">
             <div class="footerSection">
                 <h4>The Mapuan Wall</h4>
                 <h5>(Pa add ng caption)</h5>
+            </div>
+            <div>
+               <button id="clearWall" style="margin: 20px; background: red; color: white;">Clear All Entries</button>
             </div>
             <div class="footerSection">
                 <p>&copy; 2026 The Mapuan Wall. All Rights Reserved.</p>
@@ -111,6 +66,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 
 </body>
 </html>
